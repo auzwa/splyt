@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Splyt</string>
+    <string name="tip">0.00</string>
+    <string name="meal_price">How much?</string>
+    <string name="customer">Customer</string>
+    <string name="percent">15</string>
+    <string name="tax">$0.00</string>
+    <string name="total">$0.00</string>
+    <string name="customer_name">Name</string>
+    <string name="customer_price">$0.00</string>
+
+</resources>

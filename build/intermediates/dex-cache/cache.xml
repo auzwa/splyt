@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/caustin/AndroidStudioProjects/Splitr/app/build/intermediates/exploded-aar/org.adw.library/discrete-seekbar/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3e2965bae48affdd6dcd3f87cd525a988ade1250">
+        <dex dex="/Users/caustin/AndroidStudioProjects/Splitr/app/build/intermediates/pre-dexed/debug/classes-75db1a97d20e43475828700fb56c92317b87a142.jar" />
+    </item>
+
+</items>
