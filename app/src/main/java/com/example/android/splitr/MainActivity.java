@@ -187,7 +187,12 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
                 {
                     if (v == dinerList.get(i).orderList.get(j) && hasFocus == false) ;
                 }
-                dinerList.get(i).updateTotal((EditText) v, tipPercentValue);
+                try {
+                    Double.parseDouble(((EditText) v).getText().toString().replace("$", ""));
+                    dinerList.get(i).updateTotal((EditText) v, tipPercentValue);
+                } catch (Exception ex) {
+
+                }
                 calcGrandTotal();
 
             }
