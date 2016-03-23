@@ -86,7 +86,7 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
         if (v == addDinerButton) {
             TableRow row1 = new TableRow(this);
             EditText et1 = new EditText(this);
-            et1.setText("Customer");
+            et1.setText("Diner");
             et1.setSelectAllOnFocus(true);
             et1.setInputType(firstCustomer.getInputType());
             et1.setBackground(firstCustomer.getBackground());
@@ -95,6 +95,7 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
             et1.setLayoutParams(firstCustomer.getLayoutParams());
             et1.setWidth(firstCustomer.getWidth());
             et1.setOnFocusChangeListener(this);
+            et1.requestFocus();
             EditText et2 = new EditText(this);
             et2.setText("0.00");
             et2.setSelectAllOnFocus(true);
@@ -124,9 +125,13 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
             TextView tv1 = new TextView(this);
             tv1.setText(et1.getText().toString());
             tv1.setGravity(customerName.getGravity());
+            tv1.setTextColor(getColor(R.color.colorPrimary));
+            tv1.setTextSize(15);
             TextView tv2 = new TextView(this);
             tv2.setText(et2.getText().toString());
             tv2.setGravity(customerAmount.getGravity());
+            tv2.setTextColor(getColor(R.color.colorPrimary));
+            tv2.setTextSize(15);
             row2.addView(tv1);
             row2.addView(tv2);
             mainTable.addView(row2, rowIndex + 10 + dinerList.size());
