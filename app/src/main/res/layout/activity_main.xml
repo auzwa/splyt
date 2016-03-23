@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Who do you want to split the bill with today?"
+        android:text="Who did you dine with today?"
         android:id="@+id/mainHeading"
         android:layout_alignLeft="@id/imageView"
         android:layout_alignTop="@id/imageView"
@@ -31,9 +31,9 @@
         android:layout_alignBottom="@id/imageView"
         android:textColor="#FFFFFF"
         android:textStyle="italic"
-        android:textAlignment="center"
+        android:gravity="center"
         android:textSize="24sp"
-        android:layout_margin="46dp"/>
+        android:layout_margin="36dp"/>
 
 
     <TableLayout
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/addDinerButton"
-            android:text="ADD DINER"
+            android:text="+ ADD DINER"
             android:layout_marginBottom="16dp"
             android:textStyle="bold"
             android:textColor="#ffffff"
@@ -99,7 +99,7 @@
 
         <TableRow
             android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center">
 
@@ -151,7 +151,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="TIP:"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Tip:"
                 android:textSize="16sp"
                 android:id="@+id/tipHard"
                 android:gravity="right"/>
@@ -159,6 +160,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"
                 android:id="@+id/tipDollar"
                 android:text="$0.00"
@@ -199,7 +201,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TAX:"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Tax:"
             android:textSize="16sp"
             android:id="@+id/taxHard"
             android:gravity="right"/>
@@ -243,6 +246,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
                 android:text="TOTAL:"
                 android:textSize="16sp"
                 android:id="@+id/totalHard"
@@ -251,6 +256,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
                 android:inputType="number"
                 android:textSize="16sp"
                 android:id="@+id/textGTotal"
@@ -284,7 +290,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
                 android:text="SPLIT BILL:"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
                 android:textSize="16sp"
                 android:id="@+id/splitBill"
                 android:gravity="right|center_vertical"/>
@@ -299,8 +308,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Customer"
-                android:textSize="14sp"
+                android:textColor="@color/colorPrimary"
+                android:text="Diner"
+                android:textSize="15sp"
                 android:id="@+id/customerName"
                 android:gravity="right"
                 android:layout_marginTop="8dp"/>
@@ -309,7 +319,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:textSize="14sp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
                 android:id="@+id/customerAmount"
                 android:text="$0.00"
                 android:gravity="center_horizontal"
@@ -320,21 +331,20 @@
         <TableRow
             android:id="@+id/tableRow12"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center">
+            android:layout_height="16dp"
+            android:layout_marginTop="32dp"
+            >
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="16dp"
             android:id="@+id/refresh"
-            android:layout_below="@+id/customerAmount"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
             android:text="REFRESH"
             android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:background="@drawable/button_selector"
-            android:layout_span="3"/>
+            android:textColor="#18ab45"
+            android:background="@android:color/transparent"
+            android:layout_span="3"
+            android:gravity="right"/>
 
         </TableRow>
 
