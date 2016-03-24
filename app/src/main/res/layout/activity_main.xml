@@ -6,11 +6,14 @@
     android:layout_height="match_parent" >
 
 
+
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".MainActivity"
     android:focusableInTouchMode="true">
+
+
 
 
     <ImageView
@@ -120,9 +123,10 @@
             android:layout_height="wrap_content"
             android:gravity="center">
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:textColor="@color/colorPrimaryDark"
                 android:text="15%"
                 android:textSize="16sp"
                 android:gravity="right|center_vertical"
@@ -258,6 +262,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimaryDark"
                 android:inputType="number"
+                android:textStyle="bold"
                 android:textSize="16sp"
                 android:id="@+id/textGTotal"
                 android:text="$0.00"
@@ -274,7 +279,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="4dp"
                 android:background="#d3d7dc"
                 android:id="@+id/div4"
                 android:layout_span="3"
@@ -291,9 +296,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimary"
-                android:text="SPLIT BILL:"
-                android:layout_marginTop="8dp"
                 android:textStyle="bold"
+                android:text="THE SPLIT:"
+                android:layout_marginTop="8dp"
                 android:textSize="16sp"
                 android:id="@+id/splitBill"
                 android:gravity="right|center_vertical"/>
@@ -310,7 +315,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimary"
                 android:text="Diner"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:id="@+id/customerName"
                 android:gravity="right"
                 android:layout_marginTop="8dp"/>
@@ -320,7 +325,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:id="@+id/customerAmount"
                 android:text="$0.00"
                 android:gravity="center_horizontal"
@@ -328,27 +333,11 @@
 
         </TableRow>
 
-        <TableRow
-            android:id="@+id/tableRow12"
-            android:layout_width="wrap_content"
-            android:layout_height="16dp"
-            android:layout_marginTop="32dp"
-            >
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="16dp"
-            android:id="@+id/refresh"
-            android:text="REFRESH"
-            android:textStyle="bold"
-            android:textColor="#18ab45"
-            android:background="@android:color/transparent"
-            android:layout_span="3"
-            android:gravity="right"/>
-
-        </TableRow>
 
     </TableLayout>
+
+
 
  <requestFocus/>
 
@@ -356,4 +345,9 @@
 
 </RelativeLayout>
 
+
+
 </ScrollView>
+
+
+

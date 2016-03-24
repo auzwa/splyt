@@ -31,7 +31,7 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
     private TextView tipDollar;
     private TextView textGTotal;
     private double tipPercentValue;
-    private EditText tipPercent;
+    private TextView tipPercent;
     private SeekBar tipSlider;
     private TableLayout mainTable;
     private Button addDinerButton;
@@ -61,11 +61,12 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
         addMeal = (ImageButton) findViewById(R.id.addMeal);
         customerName = (TextView) findViewById(R.id.customerName);
         customerAmount = (TextView) findViewById(R.id.customerAmount);
-        tipPercent = (EditText) findViewById(R.id.tipPercent);
+        tipPercent = (TextView) findViewById(R.id.tipPercent);
         tipSlider = (SeekBar) findViewById(R.id.tipSlider);
         tipDollar = (TextView) findViewById(R.id.tipDollar);
         textGTotal = (TextView) findViewById(R.id.textGTotal);
         taxDollar = (EditText) findViewById(R.id.taxDollar);
+
 
 
 
@@ -125,13 +126,13 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
             TextView tv1 = new TextView(this);
             tv1.setText(et1.getText().toString());
             tv1.setGravity(customerName.getGravity());
+            tv1.setTextSize(16);
             tv1.setTextColor(getColor(R.color.colorPrimary));
-            tv1.setTextSize(15);
             TextView tv2 = new TextView(this);
             tv2.setText(et2.getText().toString());
             tv2.setGravity(customerAmount.getGravity());
             tv2.setTextColor(getColor(R.color.colorPrimary));
-            tv2.setTextSize(15);
+            tv2.setTextSize(16);
             row2.addView(tv1);
             row2.addView(tv2);
             mainTable.addView(row2, rowIndex + 10 + dinerList.size());
@@ -169,7 +170,8 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
         if (v == tipPercent && hasFocus == false){
-            tipPercentValue = Double.parseDouble(((EditText) v).getText().toString().replace("%", ""));
+            tipPercentValue = Double.parseDouble(((EditText) v).getText().toString().replace("$", "").replace("%", ""));
+            tipSlider.setProgress((int) tipPercentValue);
             if (tipPercentValue > 0.5) {
                 tipPercentValue = tipPercentValue / 100;
 
@@ -179,9 +181,11 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
             tax = Double.parseDouble(((EditText) v).getText().toString().replace("$", "").replace(",",""));
             ((EditText) v).setText("$" + String.format("%,.2f", tax));
             calcGrandTotal();
+
         } else {
 
-            tipSlider.setProgress((int) tipPercentValue);
+
+
 
         }
         for (int i = 0; i < dinerList.size(); i++) {
