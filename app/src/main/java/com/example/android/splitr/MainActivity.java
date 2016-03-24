@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.view.inputmethod.InputMethodManager;
 
 
 
@@ -27,6 +28,7 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
     private double grandTotal;
     private double totalTip;
     private double tax;
+    private double taxPercentValue;
     private EditText taxDollar;
     private TextView tipDollar;
     private TextView textGTotal;
@@ -42,6 +44,8 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
     private TextView customerName;
     private ArrayList<Diner> dinerList;
 
+
+
     // Replace the onCreate method we inherited from Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +54,10 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
         setContentView(R.layout.activity_main);
         grandTotal = 0.0;
         tipPercentValue = 0.15;
+        taxPercentValue = 0.0;
         totalTip = 0.0;
         tax = 0.0;
+
 
 
         mainTable = (TableLayout) findViewById(R.id.mainTable);
@@ -215,9 +221,7 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
             tipPercent.setText(String.format("%.0f", tipPercentValue)+"%");
             tipPercentValue = tipPercentValue/100;
 
-            for (int i = 0; i < dinerList.size(); i++) {
-                dinerList.get(i).updateTotal(tipPercentValue);
-            }
+
             calcGrandTotal();
         }
     }
@@ -237,6 +241,10 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
         for (int i = 0; i < dinerList.size(); i++) {
             grandTotal += dinerList.get(i).total;
     }
+        taxPercentValue = tax / grandTotal;
+        for (int i = 0; i < dinerList.size(); i++) {
+            dinerList.get(i).setTotalText(tipPercentValue, taxPercentValue);
+        }
         totalTip = grandTotal * tipPercentValue;
         tipDollar.setText("$" + String.format("%,.2f", totalTip));
         textGTotal.setText("$" + String.format("%,.2f", grandTotal + totalTip + tax));

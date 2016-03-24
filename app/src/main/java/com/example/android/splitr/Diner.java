@@ -49,19 +49,22 @@ public class Diner {
         for (int i = 0; i < orderList.size(); i++) {
             total += editTextToDouble(orderList.get(i));
         }
-        tvSplitBill.setText("$" + String.format("%,.2f", total*(1+tip)));
+        tvSplitBill.setText("$" + String.format("%,.2f", total * (1 + tip)));
 
     }
 
-        public void updateTotal(double tip){
-            updateTotal(etFirstOrder, tip);
 
-        }
+
+
 
     public double editTextToDouble(EditText et) {
         double db = 0.0;
         db = Double.parseDouble(et.getText().toString().replace("$", ""));
         return db;
+    }
+
+    public void setTotalText(double tip, double tax) {
+        tvSplitBill.setText("$" + String.format("%,.2f", total * (1 + tip) + total * tax));
     }
 
 }
