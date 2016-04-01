@@ -10,15 +10,15 @@ import java.util.ArrayList;
 /**
  * Created by caustin on 11/30/15.
  */
-public class Diner {
+class Diner {
 
     public double total;
-    public EditText etName;
-    public EditText etFirstOrder;
-    public ImageButton ibAddItem;
-    public TextView tvName;
-    public TextView tvSplitBill;
-    public ArrayList<EditText> orderList;
+    public final EditText etName;
+    private final EditText etFirstOrder;
+    public final ImageButton ibAddItem;
+    private final TextView tvName;
+    private final TextView tvSplitBill;
+    public final ArrayList<EditText> orderList;
 
     public Diner(EditText et1, EditText et2, ImageButton ib, TextView tv1, TextView tv2) {
         total = 0.0;
@@ -57,7 +57,7 @@ public class Diner {
 
 
 
-    public double editTextToDouble(EditText et) {
+    private double editTextToDouble(EditText et) {
         double db;
         db = Double.parseDouble(et.getText().toString().replace("$", ""));
         return db;
