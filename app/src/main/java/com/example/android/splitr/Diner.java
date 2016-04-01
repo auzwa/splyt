@@ -22,7 +22,7 @@ public class Diner {
 
     public Diner(EditText et1, EditText et2, ImageButton ib, TextView tv1, TextView tv2) {
         total = 0.0;
-        orderList = new ArrayList<EditText>();
+        orderList = new ArrayList<>();
         etName = et1;
         etFirstOrder = et2;
         ibAddItem = ib;
@@ -58,7 +58,7 @@ public class Diner {
 
 
     public double editTextToDouble(EditText et) {
-        double db = 0.0;
+        double db;
         db = Double.parseDouble(et.getText().toString().replace("$", ""));
         return db;
     }
