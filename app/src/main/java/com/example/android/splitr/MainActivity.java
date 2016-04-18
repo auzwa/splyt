@@ -92,6 +92,9 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
     @SuppressLint("SetTextI18n")
     @Override
     public void onClick(View v) {
+
+
+
         if (v == addDinerButton) {
             TableRow row1 = new TableRow(this);
 
@@ -156,7 +159,7 @@ public class MainActivity extends Activity implements OnClickListener, OnFocusCh
             tv2.setTextSize(16);
             row2.addView(tv1);
             row2.addView(tv2);
-            mainTable.addView(row2, rowIndex + 10 + dinerList.size());
+            mainTable.addView(row2, rowIndex + 7 + dinerList.size());
             Diner diner = new Diner(et1, et2, ib, tv1, tv2);
             dinerList.add(diner);
         } else {
